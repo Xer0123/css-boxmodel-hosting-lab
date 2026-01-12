@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Padding vs Margin Demo</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f2f6;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        /* Common box styling */
+        .box {
+            width: 260px;
+            border: 4px solid #2f3542;
+            background-color: #ffffff;
+        }
+
+        /* Box A: Padding example */
+        .box-padding {
+            padding: 30px;
+        }
+
+        /* Box B: Margin example */
+        .box-margin {
+            margin: 30px;
+            padding: 5px; /* minimal padding for readability */
+        }
+
+        p {
+            background-color: #dfe4ea;
+            padding: 10px;
+            margin: 0;
+        }
+
+        .label {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Padding vs Margin (Visual Proof)</h1>
+
+    <div class="container">
+        <!-- Box A -->
+        <div class="box box-padding">
+            <div class="label">Box A: Padding</div>
+            <p>
+                Padding increases space inside the box.<br>
+                The text moves away from the border.
+            </p>
+        </div>
+
+        <!-- Box B -->
+        <div class="box box-margin">
+            <div class="label">Box B: Margin</div>
+            <p>
+                Margin increases space outside the box.<br>
+                The text stays close to the border.
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
