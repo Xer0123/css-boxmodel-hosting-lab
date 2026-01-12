@@ -3,18 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <title>CSS Box Model Hosting Lab</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Basic reset & layout */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 30px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        section {
+            background: #ffffff;
+            padding: 25px;
+            margin-bottom: 40px;
+            border-radius: 10px;
+        }
+
+        section h2 {
+            margin-top: 0;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        /* ---------- Task 1: Border Demo ---------- */
+        .border-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .border-card {
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            background: #fdfdfd;
+        }
+
+        .b1 { border: 4px solid #0984e3; }
+        .b2 {
+            border-top: 4px solid red;
+            border-right: 4px solid green;
+            border-bottom: 4px solid blue;
+            border-left: 4px solid orange;
+        }
+        .b3 { border: 4px dashed #6c5ce7; }
+        .b4 { border: 6px double #00b894; }
+        .b5 { border: 4px solid #e17055; border-radius: 15px; }
+        .b6 {
+            border: 3px solid #2d3436;
+            outline: 3px solid #d63031;
+            outline-offset: 6px;
+        }
+
+        /* ---------- Task 2: Box Model ---------- */
+        .box-wrapper {
+            background: #fab1a0;
+            padding: 20px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .box {
+            width: 320px;
+            height: 200px;
+            background: #74b9ff;
+            padding: 20px;
+            border: 6px solid #2d3436;
+            box-sizing: border-box;
+        }
+
+        .content {
+            background: #dfe6e9;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* ---------- Task 3: Padding vs Margin ---------- */
+        .pm-container {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .pm-box {
+            width: 260px;
+            border: 4px solid #2f3542;
+            background: #ffffff;
+        }
+
+        .padding-box {
+            padding: 30px;
+        }
+
+        .margin-box {
+            margin: 30px;
+            padding: 8px;
+        }
+
+        .pm-box p {
+            background: #dfe4ea;
+            padding: 10px;
+            margin: 0;
+        }
+
+        /* ---------- Task 4: Product Cards ---------- */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .card {
+            border: 2px solid #2d3436;
+            border-radius: 12px;
+            padding: 20px;
+            background: #ffffff;
+        }
+
+        .price {
+            color: #0984e3;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 14px;
+            border: none;
+            background: #2d3436;
+            color: #ffffff;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        /* ---------- Hosting Info ---------- */
+        .hosting {
+            background: #f1f2f6;
+            font-family: monospace;
+            padding: 15px;
+            border-left: 4px solid #0984e3;
+        }
+    </style>
 </head>
+
 <body>
 
-    <h1>CSS Box Model Hosting Lab</h1>
+<h1>CSS Box Model & Layout Lab</h1>
 
-    <ul>
-        <li><a href="task1.html">Task 1: Border Demo Cards</a></li>
-        <li><a href="task2.html">Task 2: Box Model Visualization</a></li>
-        <li><a href="task3.html">Task 3: Padding vs Margin</a></li>
-        <li><a href="task4.html">Task 4: Product Card Grid</a></li>
-    </ul>
+<!-- ================= Task 1 ================= -->
+<section>
+    <h2>Border Properties Demo</h2>
+    <div class="border-grid">
+        <div class="border-card b1">Border Shorthand</div>
+        <div class="border-card b2">Different Sides</div>
+        <div class="border-card b3">Dashed Border</div>
+        <div class="border-card b4">Double Border</div>
+        <div class="border-card b5">Rounded Corners</div>
+        <div class="border-card b6">Outline vs Border</div>
+    </div>
+</section>
+
+<!-- ================= Task 2 ================= -->
+<section>
+    <h2>Box Model Demo</h2>
+    <div class="box-wrapper">
+        <div class="box">
+            <div class="content">
+                Content: 320×200<br>
+                Padding: 20px<br>
+                Border: 6px<br>
+                Margin: 20px
+            </div>
+        </div>
+    </div>
+    <p><strong>box-sizing: border-box</strong> keeps total width fixed by including padding and border.</p>
+</section>
+
+<!-- ================= Task 3 ================= -->
+<section>
+    <h2>Padding vs Margin Demo</h2>
+    <div class="pm-container">
+        <div class="pm-box padding-box">
+            <p>Padding increases space inside the box.</p>
+        </div>
+
+        <div class="pm-box margin-box">
+            <p>Margin increases space outside the box.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ================= Task 4 ================= -->
+<section>
+    <h2>Product Cards</h2>
+    <div class="product-grid">
+        <div class="card">
+            <h3>Wireless Mouse</h3>
+            <div class="price">₹799</div>
+            <p>Ergonomic wireless mouse.</p>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="card">
+            <h3>Keyboard</h3>
+            <div class="price">₹2,499</div>
+            <p>Mechanical keyboard.</p>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="card">
+            <h3>USB-C Hub</h3>
+            <div class="price">₹1,299</div>
+            <p>Multi-port USB hub.</p>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="card">
+            <h3>Headphones</h3>
+            <div class="price">₹3,999</div>
+            <p>Noise-canceling headphones.</p>
+            <button>Buy Now</button>
+        </div>
+    </div>
+</section>
+
+<!-- ================= Hosting ================= -->
+<section>
+    <h2>Hosting Info</h2>
+    <div class="hosting">
+        Live URL: https://xer0123.github.io/css-boxmodel-hosting-lab/
+    </div>
+</section>
 
 </body>
 </html>
